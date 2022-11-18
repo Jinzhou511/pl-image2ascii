@@ -8,21 +8,21 @@
 # STEP 1. Change these values to your liking.
 
 PLUGIN_NAME="$(basename $(dirname $(realpath $0)))"  # name of current directory
-PLUGIN_TITLE='My ChRIS Plugin'
-SCRIPT_NAME='commandname'
-DESCRIPTION='A ChRIS plugin to do something awesome'
+PLUGIN_TITLE='imageto_ascii'
+SCRIPT_NAME='imagetoascii'
+DESCRIPTION='A ChRIS plugin to convert RB image to ascii art'
 ORGANIZATION='FNNDSC'
 EMAIL='dev@babyMRI.org'
 
 # Continuous integration: automatically test and build your code.
 # You are advised to review the file .github/workflows/ci.yml
 # https://github.com/FNNDSC/python-chrisapp-template/wiki/Continuous-Integration#use-ci
-ENABLE_ACTIONS_TEST=yes
+ENABLE_ACTIONS_TEST=no
 ENABLE_ACTIONS_BUILD=yes
 
 # STEP 2. Uncomment the line below.
 
-#READY=yes
+READY=yes
 
 # STEP 3. Run: ./bootstrap.sh
 
@@ -173,7 +173,7 @@ function figlet_wrapper () {
 
 function inject_figleted_title () {
   python << EOF
-for line in open('app.py'):
+for line in open('app.py'): 
     if line == 'ChRIS Plugin Template Title\n':
         print(r"""$1""")
     else:
