@@ -19,18 +19,18 @@ def get_version(rel_path: str) -> str:
 
 
 setup(
-    name='chris-plugin-template',
-    version=get_version('app.py'),
-    description='A ChRIS DS plugin template',
+    name='pl_image2ascii',
+    version=get_version('imagetoascii.py'),
+    description='A ChRIS plugin to convert RB image to ascii art',
     author='FNNDSC',
     author_email='dev@babyMRI.org',
-    url='https://github.com/FNNDSC/python-chrisapp-template',
-    py_modules=['app'],
+    url='https://github.com/Jinzhou511/pl_image2ascii',
+    py_modules=['imagetoascii'],
     install_requires=['chris_plugin'],
     license='MIT',
     entry_points={
         'console_scripts': [
-            'commandname = app:main'
+            'imagetoascii = imagetoascii:main'
         ]
     },
     classifiers=[
