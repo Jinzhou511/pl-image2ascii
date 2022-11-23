@@ -26,7 +26,7 @@ setup(
     author_email='dev@babyMRI.org',
     url='https://github.com/Jinzhou511/pl_image2ascii',
     py_modules=['imagetoascii'],
-    install_requires=['chris_plugin'],
+    install_requires=['chris_plugin','pillow'],
     license='MIT',
     entry_points={
         'console_scripts': [
