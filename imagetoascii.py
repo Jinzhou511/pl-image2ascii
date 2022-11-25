@@ -35,12 +35,11 @@ parser.add_argument(
                         help        = '''Glob pattern to match all images to convert.'''
 )
 
-
 # fucntion part
 def convert_to_ascii_art(inputfile: Path, outputfile: Path): # PosixPath
-    #print("1")
 
     image = Image.open(inputfile)
+    print("Reading in images...")
     (filename, ext) = os.path.splitext(inputfile)
     #print(filename.split("/")[-1]) 
     filename = filename.split("/")[-1]
@@ -58,9 +57,6 @@ def convert_to_ascii_art(inputfile: Path, outputfile: Path): # PosixPath
     #saving_path = os.path.join(str(outputfile).split("/")[:-1])
     saving_path = str(outputfile).split(".")[0]
 
-
-    #print(saving_path)
-    
     with open(saving_path+"_ascii.txt", "w") as file:# 1. modify the name
 
         for line in ascii_art:
@@ -69,8 +65,6 @@ def convert_to_ascii_art(inputfile: Path, outputfile: Path): # PosixPath
         
         file.close()
     
-    # 2. change saving path
-
 def convert_pixel_to_character(pixel):
     (r, g, b) = pixel
     pixel_brightness = r + g + b
@@ -79,15 +73,6 @@ def convert_pixel_to_character(pixel):
     index = int(pixel_brightness * brightness_weight) - 1
     return ascii_characters_by_surface[index]
 
-'''
-#def save_as_text(ascii_art):
-    with open("image.txt", "w") as file:
-        for line in ascii_art:
-            file.write(line)
-            file.write('\n')
-        file.close()
-
-'''
 # documentation: https://fnndsc.github.io/chris_plugin/chris_plugin.html#chris_plugin
 @chris_plugin(
     parser=parser,
@@ -109,6 +94,7 @@ def main(options: Namespace, inputdir: Path, outputdir: Path):
     for input, output in mapper:
         #print(input)
         convert_to_ascii_art(input, output)
+    print("Convertion finished.")
     #output_file = outputdir / f'{options.name}.txt'
     #output_file.write_text('did nothing successfully!')
 
