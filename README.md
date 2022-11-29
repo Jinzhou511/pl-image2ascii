@@ -4,17 +4,17 @@
 [![MIT License](https://img.shields.io/github/license/fnndsc/pl_image2ascii)](https://github.com/FNNDSC/pl_image2ascii/blob/main/LICENSE)
 [![ci](https://github.com/FNNDSC/pl_image2ascii/actions/workflows/ci.yml/badge.svg)](https://github.com/FNNDSC/pl_image2ascii/actions/workflows/ci.yml)
 
-`pl_image2ascii` is a [_ChRIS_](https://chrisproject.org/)
-_ds_ plugin which takes in ...  as input files and
-creates ... as output files.
+
 
 ## Abstract
 
-...
+`pl_image2ascii` is a [_ChRIS_](https://chrisproject.org/)
+_ds_ plugin which takes in jpg images as input files and
+creates the ascii art of the jpg image as output files.
 
 ## Installation
 
-`pl_image2ascii` is a _[ChRIS](https://chrisproject.org/) plugin_, meaning it can
+`pl_image2ascii` is a _[ChRIS](https://chrisproject.org/) ds-type plugin_, meaning it can
 run from either within _ChRIS_ or the command-line.
 
 [![Get it from chrisstore.co](https://ipfs.babymri.org/ipfs/QmaQM9dUAYFjLVn3PpNTrpbKVavvSTxNLE5BocRCW1UoXG/light.png)](https://chrisstore.co/plugin/pl_image2ascii)
@@ -69,16 +69,7 @@ docker run --rm -it --userns=host -u $(id -u):$(id -g) \
     localhost/fnndsc/pl_image2ascii imagetoascii /incoming /outgoing
 ```
 
-### Testing
 
-Run unit tests using `pytest`.
-It's recommended to rebuild the image to ensure that sources are up-to-date.
-Use the option `--build-arg extras_require=dev` to install extra dependencies for testing.
-
-```shell
-docker build -t localhost/fnndsc/pl_image2ascii:dev --build-arg extras_require=dev .
-docker run --rm -it localhost/fnndsc/pl_image2ascii:dev pytest
-```
 
 ## Release
 
@@ -106,4 +97,3 @@ to produce a JSON description of this plugin, which can be uploaded to a _ChRIS 
 ```shell
 docker run --rm localhost/fnndsc/pl_image2ascii:dev chris_plugin_info > chris_plugin_info.json
 ```
-
