@@ -45,6 +45,13 @@ mkdir incoming/ outgoing/
 mv some.dat other.dat incoming/
 singularity exec docker://fnndsc/pl_image2ascii:latest imagetoascii [--args] incoming/ outgoing/
 ```
+Input example:
+
+![image](https://github.com/Jinzhou511/pl-image2ascii/blob/main/inputdir/xray.jpg)
+
+Output example (Screenshot):
+
+![image]()
 
 ## Development
 
